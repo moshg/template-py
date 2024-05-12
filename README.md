@@ -4,6 +4,21 @@ Python template repository
 
 * [Rye](https://rye-up.com/)
 
+## Run app
+
+Sync the project; e.g. install dependencies, etc.
+
+```sh
+rye sync
+```
+
+
+Run command hello.
+
+```sh
+rye run hello
+```
+
 ## How create this template
 
 Initialize the project
