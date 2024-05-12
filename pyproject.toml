@@ -20,3 +20,33 @@ allow-direct-references = true
 
 [tool.hatch.build.targets.wheel]
 packages = ["src/template_py"]
+
+# Default ruff configuration: https://docs.astral.sh/ruff/configuration/
+[tool.ruff]
+# To lint or format notebooks, uncomment the following lines.
+# extend-include = ["*.ipynb"]
+
+[tool.ruff.lint]
+# Copied from https://docs.astral.sh/ruff/linter/#rule-selection
+select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+
+# Disable rules that conflict with format
+# ref. https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+ignore = ["E111", "E114", "E117"]
+
+[tool.ruff.format]
+# It is planned for this to be opt-out in the future.
+docstring-code-format = true
