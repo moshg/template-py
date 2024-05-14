@@ -2,10 +2,9 @@
 name = "template-py"
 version = "0.1.0"
 description = "Python template"
+license = "MIT-0"
 authors = [{ name = "mosh", email = "mosh.ohayo@gmail.com" }]
-dependencies = [
-    "structlog>=24.1.0",
-]
+dependencies = ["structlog>=24.1.0"]
 readme = "README.md"
 requires-python = ">= 3.11"
 
