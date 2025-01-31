@@ -2,21 +2,23 @@
 
 Python template repository
 
-* [Rye](https://rye-up.com/)
+## Requirements
+
+* [uv](https://docs.astral.sh/uv/)
 
 ## Run app
 
 Sync the project; e.g. install dependencies, etc.
 
 ```sh
-rye sync
+uv sync
 ```
 
 
 Run command hello.
 
 ```sh
-rye run hello
+uv run hello
 ```
 
 ## How create this template
@@ -24,13 +26,7 @@ rye run hello
 Initialize the project
 
 ```sh
-rye init
-```
-
-Edit `project.requires-python` in pyproject.toml to set the required Python version and pin the version of python to use.
-
-```sh
-rye pin 3.11
+uv init --package
 ```
 
 Edit ruff configuration in pyproject.toml.
