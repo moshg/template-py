@@ -1,6 +1,13 @@
 version: '3'
 
 tasks:
+  check:
+    deps:
+      - typecheck
+      - lint
+  typecheck:
+    cmds:
+      - uv run pyright src
   lint:
     cmds:
       - uv run ruff check src
