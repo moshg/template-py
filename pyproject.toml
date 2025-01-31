@@ -4,7 +4,7 @@ version = "0.1.0"
 description = "Python template"
 license = "MIT-0"
 readme = "README.md"
-authors = [{ name = "mosh", email = "mosh.ohayo@gmail.com" }]
+authors = [{ name = "your name", email = "your_name@example.com" }]
 requires-python = ">=3.11.8"
 dependencies = ["structlog>=25.1.0"]
 
