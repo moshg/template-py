@@ -49,6 +49,8 @@ select = [
     "SIM",
     # isort
     "I",
+    # flake8-pytest-style
+    "PT",
 ]
 
 # Disable rules that conflict with format
@@ -60,7 +62,4 @@ ignore = ["E111", "E114", "E117"]
 docstring-code-format = true
 
 [dependency-groups]
-dev = [
-    "pyright>=1.1.393",
-    "ruff>=0.9.4",
-]
+dev = ["pyright>=1.1.393", "pytest>=8.3.4", "ruff>=0.9.4"]

@@ -14,3 +14,6 @@ tasks:
   format:
     cmds:
       - uv run ruff format src
+  test:
+    cmds:
+      - uv run pytest
