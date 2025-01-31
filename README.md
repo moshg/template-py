@@ -15,11 +15,18 @@ uv sync
 ```
 
 
-Run command hello.
+The hello command is defined in project.scripts in pyproject.toml.
 
 ```sh
 uv run hello
 ```
+
+Project management commands are located in Taskfile.yaml.
+
+```sh
+task lint
+```
+
 
 ## How create this template
 
