@@ -9,6 +9,20 @@ Python template repository
 
 You can use the provided [dev container](https://code.visualstudio.com/docs/devcontainers/containers) to automatically set up the development environment with all requirements.
 
+## Tech Stack
+
+### Dependencies
+- **[Pydantic](https://docs.pydantic.dev/)**: Data validation and settings management using Python type annotations
+- **[structlog](https://www.structlog.org/)**: Structured logging for better observability
+
+### Development Tools
+- **[uv](https://docs.astral.sh/uv/)**: Fast Python package manager and resolver
+- **[Ruff](https://docs.astral.sh/ruff/)**: An extremely fast Python linter and code formatter
+- **[Pyright](https://microsoft.github.io/pyright/#/)**: Static type checker for Python
+- **[pytest](https://docs.pytest.org/)**: Testing framework for Python
+- **[pip-audit](https://github.com/pypa/pip-audit)**: Security vulnerability scanner for Python packages
+- **[Task](https://taskfile.dev/)**: Simple task runner
+
 ## Run app
 
 Sync the project; e.g. install dependencies, etc.
