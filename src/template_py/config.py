@@ -1,3 +1,10 @@
-import os
+from typing import Literal
 
-log_format = os.getenv("LOG_FORMAT", "console")
+from pydantic_settings import BaseSettings
+
+
+class Settings(BaseSettings):
+    log_format: Literal["console", "json"] = "console"
+
+
+settings = Settings()

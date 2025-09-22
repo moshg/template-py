@@ -6,7 +6,11 @@ license = "MIT-0"
 readme = "README.md"
 authors = [{ name = "your name", email = "your_name@example.com" }]
 requires-python = ">=3.11.8"
-dependencies = ["structlog>=25.1.0"]
+dependencies = [
+    "pydantic>=2.11.9",
+    "pydantic-settings>=2.10.1",
+    "structlog>=25.1.0",
+]
 
 [build-system]
 requires = ["hatchling"]
