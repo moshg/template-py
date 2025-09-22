@@ -7,6 +7,8 @@ Python template repository
 * [uv](https://docs.astral.sh/uv/): Python package manager
 * [Task](https://taskfile.dev/): Task runner
 
+You can use the provided [dev container](https://code.visualstudio.com/docs/devcontainers/containers) to automatically set up the development environment with all requirements.
+
 ## Run app
 
 Sync the project; e.g. install dependencies, etc.
