@@ -4,7 +4,8 @@ Python template repository
 
 ## Requirements
 
-* [uv](https://docs.astral.sh/uv/)
+* [uv](https://docs.astral.sh/uv/): Python package manager
+* [Task](https://taskfile.dev/): Task runner
 
 ## Run app
 
@@ -14,17 +15,17 @@ Sync the project; e.g. install dependencies, etc.
 uv sync
 ```
 
-
-The hello command is defined in project.scripts in pyproject.toml.
-
-```sh
-uv run hello
-```
-
-Project management commands are located in Taskfile.yaml.
+Commands are located in Taskfile.yaml.
 
 ```sh
-task lint
+# run the script
+task run
+# typecheck and lint
+task check
+# format
+task format
+# test
+task test
 ```
 
 

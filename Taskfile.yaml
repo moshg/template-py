@@ -1,6 +1,9 @@
 version: '3'
 
 tasks:
+  run:
+    cmds:
+      - uv run -m template_py.main
   check:
     deps:
       - typecheck
