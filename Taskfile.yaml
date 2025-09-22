@@ -2,24 +2,31 @@ version: '3'
 
 tasks:
   run:
+    desc: Run the main script
     cmds:
       - uv run -m template_py.main
   check:
+    desc: Check code quality (typecheck + lint)
     deps:
       - typecheck
       - lint
   typecheck:
+    desc: Typecheck the codebase
     cmds:
       - uv run pyright src
   lint:
+    desc: Lint the codebase
     cmds:
       - uv run ruff check src
   format:
+    desc: Format the codebase
     cmds:
       - uv run ruff format src
   test:
+    desc: Run the test suite
     cmds:
       - uv run pytest
   audit:
+    desc: Audit dependencies for vulnerabilities
     cmds:
       - uv run --all-groups pip-audit

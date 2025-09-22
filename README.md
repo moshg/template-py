@@ -17,19 +17,19 @@ Sync the project; e.g. install dependencies, etc.
 uv sync
 ```
 
-Commands are located in Taskfile.yaml.
+Convenient commands are defined in [Taskfile.yaml](Taskfile.yaml). You can run them with:
 
 ```sh
-# run the script
+# run the main script
 task run
-# typecheck and lint
+# check code quality
 task check
-# format
-task format
-# test
-task test
-# audit dependencies for vulnerabilities
-task audit
+```
+
+You can see all available commands with:
+
+```sh
+task --list-all
 ```
 
 
