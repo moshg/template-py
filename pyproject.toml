@@ -56,3 +56,8 @@ ignore = ["E111", "E114", "E117"]
 [tool.ruff.format]
 # It is planned for this to be opt-out in the future.
 docstring-code-format = true
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+# https://docs.pytest.org/en/8.3.x/explanation/goodpractices.html#choosing-an-import-mode
+addopts = "--import-mode=importlib"
