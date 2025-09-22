@@ -20,3 +20,6 @@ tasks:
   test:
     cmds:
       - uv run pytest
+  audit:
+    cmds:
+      - uv run --all-groups pip-audit

@@ -28,6 +28,8 @@ task check
 task format
 # test
 task test
+# audit dependencies for vulnerabilities
+task audit
 ```
 
 
