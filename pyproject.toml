@@ -24,6 +24,11 @@ build-backend = "hatchling.build"
 # https://docs.astral.sh/uv/reference/settings/#exclude-newer
 exclude-newer = "2025-09-18T00:00:00Z"
 
+[tool.pyright]
+# Explicitly set the type checking mode to "standard" for compatibility with Pylance.
+# https://microsoft.github.io/pyright/#/configuration?id=type-check-diagnostics-settings
+typeCheckingMode = "standard"
+
 # Default ruff configuration: https://docs.astral.sh/ruff/configuration/
 [tool.ruff]
 # To lint or format notebooks, uncomment the following lines.
