@@ -7,7 +7,13 @@
 	"features": {
 		"ghcr.io/devcontainers-extra/features/uv:1": {},
 		"ghcr.io/devcontainers-extra/features/go-task:1": {}
-	}
+	},
+	"remoteUser": "vscode",
+	"postCreateCommand": "sh .devcontainer/postCreate.sh",
+	"mounts": [
+		"source=claude-code-bashhistory-${devcontainerId},target=/commandhistory,type=volume",
+		"source=claude-code-config-${devcontainerId},target=/home/vscode/.claude,type=volume"
+	]
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
