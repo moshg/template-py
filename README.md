@@ -52,7 +52,7 @@ task --list-all
 Initialize the project
 
 ```sh
-uv init --package
+uv init --package --build-backend uv
 ```
 
-Edit ruff configuration in pyproject.toml.
+Edit some configurations in pyproject.toml.
