@@ -1,3 +1,5 @@
+import sys
+
 import structlog
 from structlog.typing import FilteringBoundLogger, Processor
 
@@ -36,6 +38,9 @@ match settings.log_format:
 
 structlog.configure(
     processors=_processors,
+    # Print logs to stderr
+    # https://www.reddit.com/r/golang/comments/jqvaft/why_does_the_log_package_always_output_to_stderr/
+    logger_factory=structlog.PrintLoggerFactory(sys.stderr),
 )
 
 
