@@ -32,6 +32,8 @@ typeCheckingMode = "standard"
 
 # Default ruff configuration: https://docs.astral.sh/ruff/configuration/
 [tool.ruff]
+# allow the line length to be a bit longer to accommodate modern screens
+line-length = 120
 # To lint or format notebooks, uncomment the following lines.
 # extend-include = ["*.ipynb"]
 
