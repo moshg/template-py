@@ -1,11 +1,9 @@
-import logging
-from typing import assert_never
-
 import structlog
 from structlog.typing import FilteringBoundLogger, Processor
 
 from template_py.config import settings
 
+# default value: https://www.structlog.org/en/25.4.0/getting-started.html#your-first-log-entry
 _shared_processors: list[Processor] = [
     structlog.contextvars.merge_contextvars,
     structlog.processors.add_log_level,
@@ -34,16 +32,11 @@ match settings.log_format:
         _processors = _json_processors
     case "console":
         _processors = _console_processors
-    case _:
-        assert_never(settings.log_format)
 
 
 structlog.configure(
     processors=_processors,
-    # These are the default values.
-    # We specify them explicitly against changes due to version upgrades.
-    wrapper_class=structlog.make_filtering_bound_logger(logging.NOTSET),
-    logger_factory=structlog.PrintLoggerFactory(),
 )
+
 
 logger: FilteringBoundLogger = structlog.get_logger()
