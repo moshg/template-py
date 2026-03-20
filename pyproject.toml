@@ -5,25 +5,25 @@ description = "Python template"
 license = "MIT-0"
 readme = "README.md"
 authors = [{ name = "your name", email = "your_name@example.com" }]
-requires-python = ">=3.11.8"
+requires-python = ">=3.12.13"
 dependencies = [
-    "pydantic>=2.11.9",
-    "pydantic-settings>=2.10.1",
-    "structlog>=25.4.0",
+    "pydantic>=2.12.5",
+    "pydantic-settings>=2.13.1",
+    "structlog>=25.5.0",
 ]
 
 [dependency-groups]
-dev = ["pip-audit>=2.9.0", "pyright>=1.1.405", "pytest>=8.4.2", "ruff>=0.13.0"]
+dev = ["pip-audit>=2.10.0", "pyright>=1.1.408", "pytest>=9.0.2", "ruff>=0.15.6"]
 
 # See https://docs.astral.sh/uv/concepts/build-backend/#choosing-a-build-backend
 [build-system]
-requires = ["uv_build>=0.8.20,<0.9.0"]
+requires = ["uv_build>=0.10.12,<0.11.0"]
 build-backend = "uv_build"
 
 [tool.uv]
 # Mitigate supply chain attacks by excluding too new packages.
 # https://docs.astral.sh/uv/reference/settings/#exclude-newer
-exclude-newer = "2025-09-18T00:00:00Z"
+exclude-newer = "2026-03-13T00:00:00Z"
 
 [tool.pyright]
 # Explicitly set the type checking mode to "standard" for compatibility with Pylance.
