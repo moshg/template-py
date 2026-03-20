@@ -8,3 +8,6 @@ wheels/
 
 # venv
 .venv
+
+# local claude code files
+settings.local.json
