@@ -6,19 +6,33 @@ tasks:
     cmds:
       - uv run -m template_py.main
   check:
-    desc: Check code quality (typecheck + lint)
+    desc: Check code quality (type + lint + format)
     deps:
-      - typecheck
-      - lint
-  typecheck:
+      - check:type
+      - check:lint
+      - check:format
+  check:type:
     desc: Typecheck the codebase
     cmds:
       - uv run pyright src
-  lint:
+  check:lint:
     desc: Lint the codebase
     cmds:
       - uv run ruff check src
-  format:
+  check:format:
+    desc: Check code formatting
+    cmds:
+      - uv run ruff format --check src
+  fix:
+    desc: Fix code issues (lint + format)
+    cmds:
+      - task: fix:lint
+      - task: fix:format
+  fix:lint:
+    desc: Fix linting issues
+    cmds:
+      - uv run ruff check --fix src
+  fix:format:
     desc: Format the codebase
     cmds:
       - uv run ruff format src
