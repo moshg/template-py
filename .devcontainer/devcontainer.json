@@ -1,21 +1,21 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "Ubuntu",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/base:noble",
-	"features": {
-		"ghcr.io/devcontainers-extra/features/uv:1": {},
-		"ghcr.io/devcontainers-extra/features/go-task:1": {}
-	}
-	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// "postCreateCommand": "uname -a",
-	// Configure tool-specific properties.
-	// "customizations": {},
-	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+    "name": "template-py",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "mounts": [
+        // volume mount for performance: avoid bind mount I/O overhead on macOS/Windows, and persist across rebuilds
+        "source=template-py-venv-${devcontainerId},target=${containerWorkspaceFolder}/.venv,type=volume",
+        // volume mount for performance: share cache across devcontainers
+        "source=uv-cache,target=/home/vscode/.cache/uv,type=volume",
+        // volume mount for performance: share uv-managed Python installations across devcontainers
+        "source=uv-python,target=/home/vscode/.local/share/uv,type=volume",
+        // persist claude config per-devcontainer (settings, cache, etc.)
+        // first creation: empty volume → image's ~/.claude/ contents are copied in (copy-on-first-mount)
+        // rebuild: volume already has data → image contents are ignored, previous data is preserved
+        "source=template-py-claude-code-config-${devcontainerId},target=/home/vscode/.claude,type=volume",
+        // bind history from the host so /insights can analyze past conversations across devcontainers and host
+        "source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude/history.jsonl,target=/home/vscode/.claude/history.jsonl,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": "uv sync"
 }
