@@ -17,5 +17,16 @@
         // bind history from the host so /insights can analyze past conversations across devcontainers and host
         "source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude/history.jsonl,target=/home/vscode/.claude/history.jsonl,type=bind,consistency=cached"
     ],
-    "postCreateCommand": "uv sync"
+    "postCreateCommand": "uv sync",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "streetsidesoftware.code-spell-checker",
+                "ms-python.python",
+                "charliermarsh.ruff",
+                "tamasfe.even-better-toml",
+                "anthropic.claude-code"
+            ]
+        }
+    }
 }
