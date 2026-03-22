@@ -17,7 +17,7 @@ dev = ["pip-audit>=2.10.0", "pyright>=1.1.408", "pytest>=9.0.2", "ruff>=0.15.6"]
 
 # See https://docs.astral.sh/uv/concepts/build-backend/#choosing-a-build-backend
 [build-system]
-requires = ["uv_build>=0.10.12,<0.11.0"]
+requires = ["uv_build>=0.10.10,<0.11.0"]
 build-backend = "uv_build"
 
 [tool.uv]
