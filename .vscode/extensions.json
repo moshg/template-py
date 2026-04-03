@@ -3,6 +3,6 @@
         "streetsidesoftware.code-spell-checker",
         "ms-python.python",
         "charliermarsh.ruff",
-        "tamasfe.even-better-toml"
+        "tombi-toml.tombi"
     ]
 }

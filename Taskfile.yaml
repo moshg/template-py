@@ -21,8 +21,17 @@ tasks:
       - uv run ruff check src
   check:format:
     desc: Check code formatting
+    deps:
+      - check:format:python
+      - check:format:toml
+  check:format:python:
+    desc: Check Python formatting
     cmds:
       - uv run ruff format --check src
+  check:format:toml:
+    desc: Check TOML formatting
+    cmds:
+      - uv run tombi format --check
   fix:
     desc: Fix code issues (lint + format)
     cmds:
@@ -34,8 +43,17 @@ tasks:
       - uv run ruff check --fix src
   fix:format:
     desc: Format the codebase
+    deps:
+      - fix:format:python
+      - fix:format:toml
+  fix:format:python:
+    desc: Format Python files
     cmds:
       - uv run ruff format src
+  fix:format:toml:
+    desc: Format TOML files
+    cmds:
+      - uv run tombi format
   test:
     desc: Run the test suite
     cmds:
