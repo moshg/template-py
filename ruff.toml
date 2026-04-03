@@ -5,15 +5,15 @@
 
 [lint]
 select = [
-    # Popular rules summarized in https://docs.astral.sh/ruff/linter/#rule-selection
-    "E", # pycodestyle
-    "F", # Pyflakes
-    "UP", # pyupgrade
-    "B", # flake8-bugbear
-    "SIM", # flake8-simplify
-    "I", # isort
-    # Recommended in https://docs.pytest.org/en/8.3.x/explanation/goodpractices.html#checking-with-flake8-pytest-style
-    "PT", # flake8-pytest-style
+  # Popular rules summarized in https://docs.astral.sh/ruff/linter/#rule-selection
+  "E",  # pycodestyle
+  "F",  # Pyflakes
+  "UP",  # pyupgrade
+  "B",  # flake8-bugbear
+  "SIM",  # flake8-simplify
+  "I",  # isort
+  # Recommended in https://docs.pytest.org/en/8.3.x/explanation/goodpractices.html#checking-with-flake8-pytest-style
+  "PT",  # flake8-pytest-style
 ]
 
 # Disable rules that conflict with format
